@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>tnyhtml demo</title>
+<script src="tnyhtml.js"></script>
+</head>
+<script type="text/plain" id="tnyhtml">
+$card=rounded-2xl border border-white/10 bg-white/5 p-6
+$stat=rounded-2xl border border-white/10 bg-white/5 p-5
+$muted=text-sm text-slate-500
+$btn=rounded-xl bg-blue-500 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20
+$nav=block rounded-xl px-4 py-3 text-slate-400
+$badge=rounded-full px-2.5 py-1 text-xs
+
+D stats=Revenue|$84.2k|+12.5%|from last month;Pipeline|$312k|+8.1%|weighted value;Deals|48|+6|active opportunities;Win rate|34%|+3.2%|this quarter
+D deals=Acme Health|$42,000|Proposal|72%;BrightPath|$28,500|Discovery|41%;Northstar Group|$61,200|Negotiation|86%;Volt Systems|$19,800|Qualified|55%
+D acts=9:30|Call with Acme Health;11:00|Send BrightPath proposal;14:15|Demo for Northstar Group;16:00|Follow up with Volt Systems
+D srcs=Website|42%;Referrals|27%;Outbound|19%;Partners|12%
+D team=Maya|$94k;Sam|$72k;Alex|$58k
+
+d.min-h-screen.bg-slate-950.text-slate-100.antialiased
+  as.fixed.inset-y-0.left-0.hidden.w-64.border-r.border-white/10.bg-slate-950/80.p-6.backdrop-blur.lg:block
+    d.flex.items-center.gap-3
+      d.grid.h-10.w-10.place-items-center.rounded-xl.bg-blue-500.font-bold CRM
+      d
+        d.font-semibold OrbitCRM
+        d.text-xs.text-slate-500 Sales workspace
+    n.mt-10.space-y-1.text-sm
+      a.$nav.bg-white/10.font-medium.text-white @# Dashboard
+      a.$nav @# Contacts
+      a.$nav @# Deals
+      a.$nav @# Tasks
+      a.$nav @# Reports
+  m.p-4.sm:p-6.lg:ml-64.lg:p-8
+    hd.flex.flex-col.gap-4.md:flex-row.md:items-center.md:justify-between
+      d
+        p.$muted Monday, 12 May
+        h1.mt-1.text-3xl.font-bold.tracking-tight Sales dashboard
+      d.flex.flex-1.justify-end.gap-3
+        i.flex-1.max-w-lg.min-w-0.rounded-xl.border.border-white/10.bg-white/5.px-4.py-3.text-sm.outline-none.placeholder:text-slate-500 ?Search leads, deals, contacts
+        b.$btn.shrink-0.whitespace-nowrap Add deal
+    q.mt-8.grid.gap-4.sm:grid-cols-2.xl:grid-cols-4
+      *stats
+        d.$stat
+          p.text-sm.text-slate-400 $0
+          d.mt-3.flex.items-end.justify-between.gap-4
+            d.text-3xl.font-bold.tracking-tight $1
+            s.$badge.bg-emerald-400/10.font-semibold.text-emerald-300 $2
+          p.mt-2.$muted $3
+    q.mt-8.grid.gap-6.xl:grid-cols-3
+      d.$card.xl:col-span-2
+        d.flex.items-center.justify-between
+          d
+            h2.text-lg.font-semibold Pipeline
+            p.mt-1.$muted Active deals by stage
+          b.rounded-lg.border.border-white/10.px-3.py-2.text-sm.text-slate-300 View all
+        d.mt-6.overflow-hidden
+          t.w-full.text-left.text-sm
+            tk.text-xs.uppercase.tracking-wide.text-slate-500
+              tr.border-b.border-white/10
+                th.pb-3 Deal
+                th.pb-3 Value
+                th.pb-3 Stage
+                th.pb-3.text-right Chance
+            tb
+              *deals
+                tr.border-b.border-white/5
+                  td.py-4
+                    d.font-medium.text-white $0
+                    d.$muted New business
+                  td.py-4.text-slate-300 $1
+                  td.py-4
+                    s.$badge.bg-blue-400/10.font-medium.text-blue-300 $2
+                  td.py-4.text-right.text-slate-300 $3
+      d.$card
+        h2.text-lg.font-semibold Today
+        p.mt-1.$muted Calls, demos and follow-ups
+        d.mt-6.space-y-3
+          *acts
+            d.flex.items-start.gap-3
+              d.w-14.shrink-0.$muted $0
+              d.flex-1.rounded-xl.border.border-white/10.bg-white/5.px-4.py-3.text-sm.text-slate-200 $1
+    q.mt-8.grid.gap-6.lg:grid-cols-2
+      d.$card
+        h2.text-lg.font-semibold Lead sources
+        d.mt-6.space-y-4
+          *srcs
+            d
+              d.mb-2.flex.justify-between.text-sm
+                s.text-slate-300 $0
+                s.text-slate-500 $1
+              d.h-2.overflow-hidden.rounded-full.bg-white/10
+                d.h-full.rounded-full.bg-blue-500[style:width:$1]
+      d.$card
+        h2.text-lg.font-semibold Team performance
+        d.mt-6.grid.gap-4.sm:grid-cols-3
+          *team
+            d.rounded-xl.bg-slate-900/80.p-4
+              d.h-10.w-10.rounded-full.bg-gradient-to-br.from-blue-400.to-cyan-300
+              d.mt-4.font-medium $0
+              d.$muted Closed won
+              d.mt-2.text-xl.font-bold $1
+</script>
+<body></body>
+</html>
