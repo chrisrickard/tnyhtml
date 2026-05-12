@@ -17,7 +17,9 @@ Compact markup for Tailwind-styled UIs. Compiles to HTML via Pug, so any Pug syn
 <body></body>
 ```
 
-Source order: macros → data blocks → tree. Indentation = nesting. No closing tags.
+That single script tag is the **only** dependency — it auto-injects Tailwind and Pug. Do not add separate `<script>` or `<link>` tags for Tailwind, Pug, or any other framework. Leave `<body>` empty; tnyhtml renders into it.
+
+Source order inside the block: macros → data blocks → tree. Indentation = nesting. No closing tags.
 
 ## Tag aliases
 
