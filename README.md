@@ -12,7 +12,7 @@ A page using tnyhtml needs nothing more than one script tag and a `text/plain` s
 <!doctype html>
 <html>
 <head>
-  <script src="code/tnyhtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/chrisrickard/tnyhtml/code/tnyhtml.js"></script>
 </head>
 <body></body>
 <script type="text/plain" id="tnyhtml">
@@ -28,6 +28,12 @@ m.p-8
 ```
 
 Open the HTML file in a browser — `tnyhtml.js` injects Tailwind, loads Pug, compiles the source and renders the result into `<body>`.
+
+The runtime is hosted on jsDelivr at:
+
+```
+https://cdn.jsdelivr.net/gh/chrisrickard/tnyhtml/code/tnyhtml.js
+```
 
 A complete demo lives in [`code/tnyhtml_demo.html`](code/tnyhtml_demo.html).
 

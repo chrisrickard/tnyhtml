@@ -2,7 +2,7 @@
  * tnyhtml.js – Micro UI Markup Language for LLM-generated Tailwind UIs
  *
  * Usage:
- *   <script src="tnyhtml.js"></script>
+ *   <script src="https://cdn.jsdelivr.net/gh/chrisrickard/tnyhtml/code/tnyhtml.js"></script>
  *   <script type="text/plain" id="tnyhtml"> ... source ... </script>
  *   <body></body>
  *

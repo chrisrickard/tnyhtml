@@ -10,7 +10,7 @@ Compact markup for Tailwind-styled UIs. Compiles to HTML via Pug, so any Pug syn
 ## File structure
 
 ```html
-<script src="tnyhtml.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/chrisrickard/tnyhtml/code/tnyhtml.js"></script>
 <script type="text/plain" id="tnyhtml">
 ...
 </script>
